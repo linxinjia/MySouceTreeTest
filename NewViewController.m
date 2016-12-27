@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIView *view = [UIView new];
+    [self.view addSubview:view];
+    
+    NSLog(@"dddddd");
     // Do any additional setup after loading the view.
 }
 

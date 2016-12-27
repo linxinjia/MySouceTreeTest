@@ -110,8 +110,8 @@
 		18E7DEE01E0680D30076881C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D4337341E0A0B71006FEAA5 /* MyCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomButton.h; sourceTree = "<group>"; };
 		2D4337351E0A0B71006FEAA5 /* MyCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomButton.m; sourceTree = "<group>"; };
-		2D823BDA1E124B340071CA45 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
-		2D823BDB1E124B340071CA45 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
+		2D823BDA1E124B340071CA45 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewViewController.h; path = ../NewViewController.h; sourceTree = "<group>"; };
+		2D823BDB1E124B340071CA45 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewViewController.m; path = ../NewViewController.m; sourceTree = "<group>"; };
 		2D846B8B1E08D79700EE3B3E /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		2D846B8C1E08D79700EE3B3E /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		2D846B8D1E08D79700EE3B3E /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -253,8 +253,6 @@
 		18E7DEAD1E0680D30076881C = {
 			isa = PBXGroup;
 			children = (
-				2D823BDA1E124B340071CA45 /* NewViewController.h */,
-				2D823BDB1E124B340071CA45 /* NewViewController.m */,
 				18E7DEB81E0680D30076881C /* MyTuanDaiDemo */,
 				18E7DED21E0680D30076881C /* MyTuanDaiDemoTests */,
 				18E7DEDD1E0680D30076881C /* MyTuanDaiDemoUITests */,
@@ -540,6 +538,8 @@
 				2DBA2B0C1E078FE50085E471 /* FinedViewController.m */,
 				2DBA2B0E1E078FFA0085E471 /* MineViewController.h */,
 				2DBA2B0F1E078FFA0085E471 /* MineViewController.m */,
+				2D823BDA1E124B340071CA45 /* NewViewController.h */,
+				2D823BDB1E124B340071CA45 /* NewViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

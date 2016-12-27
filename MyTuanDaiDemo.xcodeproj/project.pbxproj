@@ -14,6 +14,7 @@
 		18E7DED41E0680D30076881C /* MyTuanDaiDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E7DED31E0680D30076881C /* MyTuanDaiDemoTests.m */; };
 		18E7DEDF1E0680D30076881C /* MyTuanDaiDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E7DEDE1E0680D30076881C /* MyTuanDaiDemoUITests.m */; };
 		2D4337361E0A0B71006FEAA5 /* MyCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4337351E0A0B71006FEAA5 /* MyCustomButton.m */; };
+		2D823BDF1E124BEA0071CA45 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D823BDE1E124BEA0071CA45 /* SecondViewController.m */; };
 		2D846B991E08D79700EE3B3E /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D846B8C1E08D79700EE3B3E /* TAAbstractDotView.m */; };
 		2D846B9A1E08D79700EE3B3E /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D846B8E1E08D79700EE3B3E /* TAAnimatedDotView.m */; };
 		2D846B9B1E08D79700EE3B3E /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D846B901E08D79700EE3B3E /* TADotView.m */; };
@@ -109,6 +110,8 @@
 		18E7DEE01E0680D30076881C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D4337341E0A0B71006FEAA5 /* MyCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomButton.h; sourceTree = "<group>"; };
 		2D4337351E0A0B71006FEAA5 /* MyCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomButton.m; sourceTree = "<group>"; };
+		2D823BDD1E124BEA0071CA45 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		2D823BDE1E124BEA0071CA45 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		2D846B8B1E08D79700EE3B3E /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		2D846B8C1E08D79700EE3B3E /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		2D846B8D1E08D79700EE3B3E /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -535,6 +538,8 @@
 				2DBA2B0C1E078FE50085E471 /* FinedViewController.m */,
 				2DBA2B0E1E078FFA0085E471 /* MineViewController.h */,
 				2DBA2B0F1E078FFA0085E471 /* MineViewController.m */,
+				2D823BDD1E124BEA0071CA45 /* SecondViewController.h */,
+				2D823BDE1E124BEA0071CA45 /* SecondViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -726,6 +731,7 @@
 				2D846BCB1E08DD8200EE3B3E /* SDWebImageDownloaderOperation.m in Sources */,
 				2D846C451E090FE300EE3B3E /* MJRefreshGifHeader.m in Sources */,
 				2D846C4B1E090FE300EE3B3E /* UIScrollView+MJRefresh.m in Sources */,
+				2D823BDF1E124BEA0071CA45 /* SecondViewController.m in Sources */,
 				2D846B9A1E08D79700EE3B3E /* TAAnimatedDotView.m in Sources */,
 				2D846BA21E08D89A00EE3B3E /* FirstviewScrollView.m in Sources */,
 				2D846C3B1E090FE300EE3B3E /* MJRefreshBackFooter.m in Sources */,

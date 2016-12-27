@@ -14,6 +14,7 @@
 		18E7DED41E0680D30076881C /* MyTuanDaiDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E7DED31E0680D30076881C /* MyTuanDaiDemoTests.m */; };
 		18E7DEDF1E0680D30076881C /* MyTuanDaiDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E7DEDE1E0680D30076881C /* MyTuanDaiDemoUITests.m */; };
 		2D4337361E0A0B71006FEAA5 /* MyCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4337351E0A0B71006FEAA5 /* MyCustomButton.m */; };
+		2D823BDC1E124B340071CA45 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D823BDB1E124B340071CA45 /* NewViewController.m */; };
 		2D846B991E08D79700EE3B3E /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D846B8C1E08D79700EE3B3E /* TAAbstractDotView.m */; };
 		2D846B9A1E08D79700EE3B3E /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D846B8E1E08D79700EE3B3E /* TAAnimatedDotView.m */; };
 		2D846B9B1E08D79700EE3B3E /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D846B901E08D79700EE3B3E /* TADotView.m */; };
@@ -109,6 +110,8 @@
 		18E7DEE01E0680D30076881C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D4337341E0A0B71006FEAA5 /* MyCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomButton.h; sourceTree = "<group>"; };
 		2D4337351E0A0B71006FEAA5 /* MyCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomButton.m; sourceTree = "<group>"; };
+		2D823BDA1E124B340071CA45 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
+		2D823BDB1E124B340071CA45 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
 		2D846B8B1E08D79700EE3B3E /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		2D846B8C1E08D79700EE3B3E /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		2D846B8D1E08D79700EE3B3E /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 		18E7DEAD1E0680D30076881C = {
 			isa = PBXGroup;
 			children = (
+				2D823BDA1E124B340071CA45 /* NewViewController.h */,
+				2D823BDB1E124B340071CA45 /* NewViewController.m */,
 				18E7DEB81E0680D30076881C /* MyTuanDaiDemo */,
 				18E7DED21E0680D30076881C /* MyTuanDaiDemoTests */,
 				18E7DEDD1E0680D30076881C /* MyTuanDaiDemoUITests */,
@@ -720,6 +725,7 @@
 				2D846C431E090FE300EE3B3E /* MJRefreshBackNormalFooter.m in Sources */,
 				2DBA2B101E078FFA0085E471 /* MineViewController.m in Sources */,
 				2D846C461E090FE300EE3B3E /* MJRefreshNormalHeader.m in Sources */,
+				2D823BDC1E124B340071CA45 /* NewViewController.m in Sources */,
 				2D846BCC1E08DD8200EE3B3E /* SDWebImageManager.m in Sources */,
 				2D4337361E0A0B71006FEAA5 /* MyCustomButton.m in Sources */,
 				2D846BC91E08DD8200EE3B3E /* SDWebImageDecoder.m in Sources */,

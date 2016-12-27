@@ -1,28 +1,22 @@
 //
-//  MineViewController.m
+//  NewViewController.m
 //  MyTuanDaiDemo
 //
-//  Created by 林新佳 on 2016/12/19.
+//  Created by linxinjia on 2016/12/27.
 //  Copyright © 2016年 Apple. All rights reserved.
 //
 
-#import "MineViewController.h"
+#import "NewViewController.h"
 
-@interface MineViewController ()
+@interface NewViewController ()
 
 @end
 
-@implementation MineViewController
+@implementation NewViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-    //林新佳修改2
-    
-    
-    ///33333333
 }
 
 - (void)didReceiveMemoryWarning {

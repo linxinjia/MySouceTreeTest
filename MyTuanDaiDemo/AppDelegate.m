@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
+#import "InvestViewController.h"
+#import "FinedViewController.h"
+#import "MineViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,8 +19,64 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions NS_AVAILABLE_IOS(6_0){
+    CGRect frame = [UIScreen mainScreen].bounds;
+    self.window = [[UIWindow alloc]initWithFrame:frame];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    HomeViewController *homeViewController = [HomeViewController new];
+    homeViewController.title = @"团贷网";
+    UINavigationController *navgController = [[UINavigationController alloc]initWithRootViewController:homeViewController];
+    navgController.navigationBar.barTintColor = [UIColor colorWithRed:251/255.0 green:208/255.0 blue:30/255.0 alpha:1];
+    
+    InvestViewController *investViewController = [InvestViewController new];
+    investViewController.title = @"投资";
+    UINavigationController *navgController2 = [[UINavigationController alloc]initWithRootViewController:investViewController];
+    navgController2.navigationBar.barTintColor = [UIColor colorWithRed:251/255.0 green:208/255.0 blue:30/255.0 alpha:1];
+
+    FinedViewController *finedViewController = [FinedViewController new];
+    finedViewController.title = @"发现";
+    UINavigationController *navgController3 = [[UINavigationController alloc]initWithRootViewController:finedViewController];
+    navgController3.navigationBar.barTintColor = [UIColor colorWithRed:251/255.0 green:208/255.0 blue:30/255.0 alpha:1];
+
+    MineViewController *mineViewController = [MineViewController new];
+    mineViewController.title = @"我";
+    UINavigationController *navgController4 = [[UINavigationController alloc]initWithRootViewController:mineViewController];
+    navgController4.navigationBar.barTintColor = [UIColor colorWithRed:251/255.0 green:208/255.0 blue:30/255.0 alpha:1];
+
+    
+    _maintabBarController = [UITabBarController new];
+    _maintabBarController.viewControllers = @[navgController,navgController2,navgController3,navgController4];
+    
+    self.window.rootViewController = _maintabBarController;
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    UITabBar *tabbar = _maintabBarController.tabBar;
+    tabbar.tintColor = [UIColor colorWithRed:255/255.0 green:188/255.0 blue:0/255.0 alpha:1];
+    UITabBarItem *tabbarItem0 = [tabbar.items objectAtIndex:0];
+    UITabBarItem *tabbarItem1 = [tabbar.items objectAtIndex:1];
+    UITabBarItem *tabbarItem2 = [tabbar.items objectAtIndex:2];
+    UITabBarItem *tabbarItem3 = [tabbar.items objectAtIndex:3];
+    
+    tabbarItem0.selectedImage = [UIImage imageNamed:@"tdlogo_selected"];
+    tabbarItem0.image = [UIImage imageNamed:@"tdlogo_noselected"];
+    tabbarItem0.title = @"团贷网";
+    
+    tabbarItem1.selectedImage = [UIImage imageNamed:@"invest_selected"];
+    tabbarItem1.image = [UIImage imageNamed:@"invest_noselected"];
+    tabbarItem1.title = @"投资";
+    
+    tabbarItem2.selectedImage = [UIImage imageNamed:@"fined_selected"];
+    tabbarItem2.image = [UIImage imageNamed:@"fined_noselected"];
+    tabbarItem2.title = @"发现";
+    
+    tabbarItem3.selectedImage = [UIImage imageNamed:@"mine_selected"];
+    tabbarItem3.image = [UIImage imageNamed:@"mine_noselected"];
+    tabbarItem3.title = @"我";
     return YES;
 }
 

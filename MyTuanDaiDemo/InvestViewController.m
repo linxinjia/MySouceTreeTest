@@ -10,28 +10,39 @@
 
 @interface InvestViewController ()
 
+@property (nonatomic ,strong) CADisplayLink *displayLink;
+@property (nonatomic) NSInteger count;
 @end
 
 @implementation InvestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.displayLink =[CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkEvent:)];
+    
+    [self performSelector:@selector(eventOne) withObject:nil afterDelay:1.f];
+    [self performSelector:@selector(eventTwo) withObject:nil afterDelay:2.f];
+}
+
+#pragma mark displayLink Event
+- (void)displayLinkEvent:(id)object
+{
+    self.count ++;
+    NSLog(@"count = %ld",self.count);
+}
+
+- (void)eventOne
+{
+    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+}
+
+- (void)eventTwo
+{
+    [self.displayLink invalidate];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

@@ -22,12 +22,8 @@
     [super viewDidLoad];
     
     
-    
-    
-    
-    [self accessNormalLayer];
-    
-//    [self accessPopLayer];
+//    [self accessNormalLayer];
+    [self accessPopLayer];
 }
 
 #pragma mark - 处理popLayer
@@ -69,13 +65,11 @@
     [self performSelector:@selector(removeNormalAnimation) withObject:nil afterDelay:4.0f];
 }
 
-
 #pragma mark - 移除pop动画
 - (void)removePopAnimation
 {
     [self.poplayer pop_removeAllAnimations];
 }
-
 
 #pragma mark - 移除普通动画效果
 - (void)removeNormalAnimation
@@ -86,20 +80,6 @@
     
     [self.normalLayer removeAllAnimations];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyTuanDaiDemo/MineViewController.m"
-            timestampString = "504760451.577873"
+            filePath = "MyTuanDaiDemo/InvestViewController.m"
+            timestampString = "505366299.737112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "-buttonAction:"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,13 +67,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyTuanDaiDemo/MineViewController.m"
-            timestampString = "504760451.577873"
+            filePath = "MyTuanDaiDemo/InvestViewController.m"
+            timestampString = "505386390.122289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-myDecayAnimation"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-myCalender"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTuanDaiDemo/InvestViewController.m"
+            timestampString = "505387158.416604"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-myCalender"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

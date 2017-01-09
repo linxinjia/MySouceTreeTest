@@ -16,6 +16,12 @@
 @end
 @implementation MyHomeView
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    MyHomeView *newObj = [[self class]allocWithZone:zone];
+    newObj.selftyImage = self.selftyImage;
+    return newObj;
+}
 
 - (instancetype)init{
     if (self = [super init]) {

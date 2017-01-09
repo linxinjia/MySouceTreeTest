@@ -42,6 +42,8 @@
     [self initLogic];
 }
 
+
+
 - (void)initView{
     _scrollView = [UIScrollView new];
     _scrollView.clipsToBounds = YES;

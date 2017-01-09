@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyHomeView : UIView
+@interface MyHomeView : UIView<NSCopying>
 
 @property (nonatomic ,strong)UIImageView *selftyImage;
 @property (nonatomic ,strong)UILabel *selftyLabel;

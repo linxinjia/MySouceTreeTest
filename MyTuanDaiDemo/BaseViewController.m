@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
 }
+
 - (void)openView:(UIViewController *)viewController{
     self.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:viewController animated:YES];

@@ -21,9 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake(0, 100, 100, 40)];
+    NSMutableArray *array = [NSMutableArray array];
+    [array addObject:[UIImage imageNamed:@"image_cfinancing"]];
+    [array addObject:[UIImage imageNamed:@"image_security"]];
+    view.animationImages = array;
+    [self.view addSubview:view];
+//    [view startAnimating];
     
 //    [self accessNormalLayer];
-    [self accessPopLayer];
+//    [self accessPopLayer];
 }
 
 #pragma mark - 处理popLayer

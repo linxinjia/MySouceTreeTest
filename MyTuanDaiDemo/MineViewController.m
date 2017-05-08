@@ -21,13 +21,52 @@
 
 @implementation MineViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     scaleFloat = 2;
     
+//    [self myDecayAnimation];//衰减动画
+//    [self mySpringAnimation];//弹簧动画
     
-    [self mySpringAnimation];
-    [self myDecayAnimation];
+    [self myGesture];
+}
+
+//手势
+- (void)myGesture{
+//    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTap:)];
+//    tapRecognizer.numberOfTapsRequired = 2;
+//    tapRecognizer.numberOfTouchesRequired = 2;
+//    [self.view addGestureRecognizer:tapRecognizer];
+//    
+//    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(didSwipe:)];
+//    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+//    [self.view addGestureRecognizer:swipeRecognizer];
+    
+    
+    UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(didLongPress:)];
+    longPressRecognizer.minimumPressDuration = 1;
+    longPressRecognizer.allowableMovement = 20;
+    [self.view addGestureRecognizer:longPressRecognizer];
+    
+}
+
+- (void)didTap:(UITapGestureRecognizer *)recognizer{
+    NSLog(@"didTaped");
+}
+- (void)didSwipe:(UISwipeGestureRecognizer *)recognizer{
+    NSLog(@"didSwiped");
+}
+- (void)didLongPress:(UILongPressGestureRecognizer *)recognizer{
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"began");
+    }else if (recognizer.state == UIGestureRecognizerStateChanged){
+        NSLog(@"changed");
+    }else if (recognizer.state == UIGestureRecognizerStateEnded){
+        NSLog(@"ended");
+    }else{
+        NSLog(@"-------");
+    }
 }
 
 #pragma mark - 衰减动画

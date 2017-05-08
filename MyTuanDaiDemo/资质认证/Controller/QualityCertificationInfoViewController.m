@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  QualityCertificationInfoViewController.m
 //  MyTuanDaiDemo
 //
-//  Created by linxinjia on 2016/12/27.
-//  Copyright © 2016年 Apple. All rights reserved.
+//  Created by linxinjia on 2017/2/14.
+//  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "QualityCertificationInfoViewController.h"
 
-@interface SecondViewController ()
+@interface QualityCertificationInfoViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation QualityCertificationInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

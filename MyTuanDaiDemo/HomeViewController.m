@@ -11,6 +11,8 @@
 #import "SDCycleScrollView.h"
 //#import "TAPageControl.h"
 #import "MJRefresh.h"
+#import "CloseLimitAdvertiseView.h"
+#import "QualityCertificationViewController.h"
 
 @interface HomeViewController ()<SDCycleScrollViewDelegate>
 {
@@ -24,6 +26,11 @@
 @end
 
 @implementation HomeViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,6 +47,11 @@
     
     [self initView];
     [self initLogic];
+    
+    
+    
+    
+    
 }
 
 
@@ -271,10 +283,21 @@
 }
 
 - (void)clickedSelfty{
-    UIViewController *viewcontroller = [UIViewController new];
-    viewcontroller.view.backgroundColor = [UIColor whiteColor];
-    viewcontroller.title = @"安全保障";
-    [self openView:viewcontroller];
+//    UIViewController *viewcontroller = [UIViewController new];
+//    viewcontroller.view.backgroundColor = [UIColor whiteColor];
+//    viewcontroller.title = @"安全保障";
+//    [self openView:viewcontroller];
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    
+    QualityCertificationViewController *qualityCertificationVC = [QualityCertificationViewController new];
+    [self openView:qualityCertificationVC];
+    
+    
+    
+//    CloseLimitAdvertiseView *closeLimitAdvertiseView = [CloseLimitAdvertiseView new];
+//    [self.view addSubview:closeLimitAdvertiseView];
+//    closeLimitAdvertiseView.frame = [UIScreen mainScreen].bounds;
 }
 
 - (void)welfareSelfty{

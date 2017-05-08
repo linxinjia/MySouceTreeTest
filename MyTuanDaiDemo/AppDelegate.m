@@ -39,6 +39,7 @@
     UINavigationController *navgController3 = [[UINavigationController alloc]initWithRootViewController:finedViewController];
     navgController3.navigationBar.barTintColor = [UIColor colorWithRed:251/255.0 green:208/255.0 blue:30/255.0 alpha:1];
 
+    
     MineViewController *mineViewController = [MineViewController new];
     mineViewController.title = @"我";
     UINavigationController *navgController4 = [[UINavigationController alloc]initWithRootViewController:mineViewController];

@@ -8,8 +8,10 @@
 
 #import "InvestViewController.h"
 
-@interface InvestViewController ()
-
+@interface InvestViewController ()<NSURLConnectionDataDelegate>
+{
+    NSURLConnection *_connection;
+}
 //POP动画引擎的动画效果非常流畅，因为它使用了CADisplayLink来刷新画面（帧）
 @property (nonatomic ,strong) CADisplayLink *displayLink;
 @property (nonatomic) NSInteger count;
@@ -23,7 +25,7 @@
     
     
     [self myCalender];
-    
+    [self connectionPart];
     
     
     NSArray *names = @[@"张三", @"李五", @"王五"];
@@ -85,20 +87,19 @@
     
 }
 
-
+//日历
 - (void)myCalender
 {
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm tt"];
     NSString *dateString = [dateFormatter stringFromDate:date];
-    
+
     
     
     
     NSDate *startDate;
     NSTimeInterval secondsOfMonth;
-    
     NSCalendar *calender = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierChinese];
     [calender setTimeZone:[NSTimeZone systemTimeZone]];
     
@@ -112,12 +113,10 @@
     if ([trimmedString hasSuffix:@"F"]) {
         return;
     }
-    
     NSMutableArray *muArray = [NSMutableArray array];
     [muArray sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         return obj1 < obj2;
     }];
-    
     [trimmedString rangeOfString:@"]" options:NSBackwardsSearch];
     
     
@@ -125,14 +124,35 @@
     const char *str = [trimmedString cStringUsingEncoding:NSUTF8StringEncoding];
     int min,sec,per_sec;
     sscanf(str, "%d:%d.%d",&min,&sec,&per_sec);
-    
     NSUInteger milliSeconds = min*60*1000 + sec*1000 + per_sec*10;
 }
 
 
-
-
-
+//异步下载
+- (void)connectionPart
+{
+    
+}
+//错误
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    
+}
+//开始接收到头部数据
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    
+}
+//开始接收到正文数据（可能多次调用）
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    
+}
+//完成加载
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    
+}
 
 
 

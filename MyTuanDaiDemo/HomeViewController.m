@@ -13,6 +13,7 @@
 #import "MJRefresh.h"
 #import "CloseLimitAdvertiseView.h"
 #import "QualityCertificationViewController.h"
+#import "PhotoPickerViewController.h"
 
 @interface HomeViewController ()<SDCycleScrollViewDelegate>
 {
@@ -315,8 +316,7 @@
 }
 
 - (void)toIntrestGrowth{
-    UIViewController *viewcontroller = [UIViewController new];
-    viewcontroller.view.backgroundColor = [UIColor whiteColor];
+    PhotoPickerViewController *viewcontroller = [PhotoPickerViewController new];
     viewcontroller.title = @"新手专享";
     [self openView:viewcontroller];
 }

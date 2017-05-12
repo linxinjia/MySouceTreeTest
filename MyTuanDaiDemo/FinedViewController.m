@@ -10,7 +10,7 @@
 #import "pop/POP.h"
 
 @interface FinedViewController ()
-
+//POP动画引擎的动画效果非常流畅，因为它使用了CADisplayLink来刷新画面（帧）
 @property (nonatomic, strong)CALayer *normalLayer;
 @property (nonatomic, strong)CALayer *poplayer;
 
@@ -29,8 +29,8 @@
     [self.view addSubview:view];
 //    [view startAnimating];
     
-//    [self accessNormalLayer];
-//    [self accessPopLayer];
+    [self accessNormalLayer];
+    [self accessPopLayer];
 }
 
 #pragma mark - 处理popLayer

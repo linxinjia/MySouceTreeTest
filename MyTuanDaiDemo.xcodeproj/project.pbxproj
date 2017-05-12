@@ -15,9 +15,8 @@
 		18E7DEDF1E0680D30076881C /* MyTuanDaiDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E7DEDE1E0680D30076881C /* MyTuanDaiDemoUITests.m */; };
 		2D1A90421E4C46A300CC1BA3 /* CloseLimitAdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A90411E4C46A300CC1BA3 /* CloseLimitAdvertiseView.m */; };
 		2D4337361E0A0B71006FEAA5 /* MyCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4337351E0A0B71006FEAA5 /* MyCustomButton.m */; };
-		2D50E9A01E5305CF0099FDA7 /* QualityCertificationInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50E99D1E5305CF0099FDA7 /* QualityCertificationInfoViewController.m */; };
-		2D50E9A11E5305CF0099FDA7 /* QualityCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50E99F1E5305CF0099FDA7 /* QualityCertificationViewController.m */; };
-		2D50E9A41E53061F0099FDA7 /* QualityCertificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50E9A31E53061F0099FDA7 /* QualityCertificationView.m */; };
+		2D55A6DA1EC594F70010005F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D55A6D91EC594F70010005F /* SecondViewController.m */; };
+		2D55A6DD1EC5AAA40010005F /* CompalyDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D55A6DC1EC5AAA40010005F /* CompalyDetailsViewController.m */; };
 		2D57D9091E1516E5009DCB9E /* pop-ios-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D57D8D21E1516E5009DCB9E /* pop-ios-Info.plist */; };
 		2D57D90A1E1516E5009DCB9E /* pop-osx-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D57D8D31E1516E5009DCB9E /* pop-osx-Info.plist */; };
 		2D57D90B1E1516E5009DCB9E /* pop-tvos-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D57D8D41E1516E5009DCB9E /* pop-tvos-Info.plist */; };
@@ -154,12 +153,10 @@
 		2D1A90411E4C46A300CC1BA3 /* CloseLimitAdvertiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloseLimitAdvertiseView.m; sourceTree = "<group>"; };
 		2D4337341E0A0B71006FEAA5 /* MyCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomButton.h; sourceTree = "<group>"; };
 		2D4337351E0A0B71006FEAA5 /* MyCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomButton.m; sourceTree = "<group>"; };
-		2D50E99C1E5305CF0099FDA7 /* QualityCertificationInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityCertificationInfoViewController.h; sourceTree = "<group>"; };
-		2D50E99D1E5305CF0099FDA7 /* QualityCertificationInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityCertificationInfoViewController.m; sourceTree = "<group>"; };
-		2D50E99E1E5305CF0099FDA7 /* QualityCertificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityCertificationViewController.h; sourceTree = "<group>"; };
-		2D50E99F1E5305CF0099FDA7 /* QualityCertificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityCertificationViewController.m; sourceTree = "<group>"; };
-		2D50E9A21E53061F0099FDA7 /* QualityCertificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityCertificationView.h; sourceTree = "<group>"; };
-		2D50E9A31E53061F0099FDA7 /* QualityCertificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityCertificationView.m; sourceTree = "<group>"; };
+		2D55A6D81EC594F70010005F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		2D55A6D91EC594F70010005F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		2D55A6DB1EC5AAA40010005F /* CompalyDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompalyDetailsViewController.h; sourceTree = "<group>"; };
+		2D55A6DC1EC5AAA40010005F /* CompalyDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompalyDetailsViewController.m; sourceTree = "<group>"; };
 		2D57D8D11E1516E5009DCB9E /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		2D57D8D21E1516E5009DCB9E /* pop-ios-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "pop-ios-Info.plist"; sourceTree = "<group>"; };
 		2D57D8D31E1516E5009DCB9E /* pop-osx-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "pop-osx-Info.plist"; sourceTree = "<group>"; };
@@ -416,8 +413,8 @@
 				18E7DEBD1E0680D30076881C /* AppDelegate.m */,
 				2DBA2B141E07EA290085E471 /* BaseViewController.h */,
 				2DBA2B151E07EA290085E471 /* BaseViewController.m */,
+				2D55A6D71EC5921D0010005F /* 招聘页面 */,
 				2D6B0BBA1EC05D6E00F59DB4 /* 照片管理器 */,
-				2D50E9911E52FF560099FDA7 /* 资质认证 */,
 				2DBA2B131E07B08A0085E471 /* Controller */,
 				2DBA2B111E07B0670085E471 /* View */,
 				2DBA2B011E076FBE0085E471 /* MyHomeViewModel.h */,
@@ -468,49 +465,13 @@
 			name = Tool;
 			sourceTree = "<group>";
 		};
-		2D50E9911E52FF560099FDA7 /* 资质认证 */ = {
+		2D55A6D71EC5921D0010005F /* 招聘页面 */ = {
 			isa = PBXGroup;
 			children = (
-				2D50E9991E5305B00099FDA7 /* Controller */,
-				2D50E99A1E5305B00099FDA7 /* View */,
-				2D50E99B1E5305B00099FDA7 /* Model */,
-				2D50E9921E52FF560099FDA7 /* 实名认证 */,
+				2D55A6DB1EC5AAA40010005F /* CompalyDetailsViewController.h */,
+				2D55A6DC1EC5AAA40010005F /* CompalyDetailsViewController.m */,
 			);
-			path = "资质认证";
-			sourceTree = "<group>";
-		};
-		2D50E9921E52FF560099FDA7 /* 实名认证 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "实名认证";
-			sourceTree = "<group>";
-		};
-		2D50E9991E5305B00099FDA7 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				2D50E99E1E5305CF0099FDA7 /* QualityCertificationViewController.h */,
-				2D50E99F1E5305CF0099FDA7 /* QualityCertificationViewController.m */,
-				2D50E99C1E5305CF0099FDA7 /* QualityCertificationInfoViewController.h */,
-				2D50E99D1E5305CF0099FDA7 /* QualityCertificationInfoViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		2D50E99A1E5305B00099FDA7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2D50E9A21E53061F0099FDA7 /* QualityCertificationView.h */,
-				2D50E9A31E53061F0099FDA7 /* QualityCertificationView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2D50E99B1E5305B00099FDA7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
+			path = "招聘页面";
 			sourceTree = "<group>";
 		};
 		2D57D8D01E1516E5009DCB9E /* pop */ = {
@@ -845,6 +806,8 @@
 				2DBA2B061E078FB10085E471 /* HomeViewController.m */,
 				2DBA2B081E078FCE0085E471 /* InvestViewController.h */,
 				2DBA2B091E078FCE0085E471 /* InvestViewController.m */,
+				2D55A6D81EC594F70010005F /* SecondViewController.h */,
+				2D55A6D91EC594F70010005F /* SecondViewController.m */,
 				2DBA2B0B1E078FE50085E471 /* FinedViewController.h */,
 				2DBA2B0C1E078FE50085E471 /* FinedViewController.m */,
 				2DBA2B0E1E078FFA0085E471 /* MineViewController.h */,
@@ -1009,7 +972,6 @@
 				2D57D91B1E1516E5009DCB9E /* POPSpringAnimation.mm in Sources */,
 				2D6B0BDD1EC05D6F00F59DB4 /* TZGifPhotoPreviewController.m in Sources */,
 				2D57D9131E1516E5009DCB9E /* POPBasicAnimation.mm in Sources */,
-				2D50E9A11E5305CF0099FDA7 /* QualityCertificationViewController.m in Sources */,
 				2DBA2B031E076FBE0085E471 /* MyHomeView.m in Sources */,
 				2D846B9B1E08D79700EE3B3E /* TADotView.m in Sources */,
 				2D846BCD1E08DD8200EE3B3E /* SDWebImagePrefetcher.m in Sources */,
@@ -1019,7 +981,6 @@
 				2D6B0BDA1EC05D6F00F59DB4 /* NSBundle+TZImagePicker.m in Sources */,
 				2D6B0BDB1EC05D6F00F59DB4 /* TZAssetCell.m in Sources */,
 				2D846B991E08D79700EE3B3E /* TAAbstractDotView.m in Sources */,
-				2D50E9A41E53061F0099FDA7 /* QualityCertificationView.m in Sources */,
 				2D846C421E090FE300EE3B3E /* MJRefreshBackGifFooter.m in Sources */,
 				2D846C491E090FE300EE3B3E /* MJRefreshConst.m in Sources */,
 				2DBA2B161E07EA290085E471 /* BaseViewController.m in Sources */,
@@ -1036,9 +997,9 @@
 				2D846C471E090FE300EE3B3E /* MJRefreshStateHeader.m in Sources */,
 				2DBA2B0A1E078FCE0085E471 /* InvestViewController.m in Sources */,
 				2D846BD31E08DD8200EE3B3E /* UIImageView+WebCache.m in Sources */,
-				2D50E9A01E5305CF0099FDA7 /* QualityCertificationInfoViewController.m in Sources */,
 				2D57D9181E1516E5009DCB9E /* POPLayerExtras.mm in Sources */,
 				18E7DEBE1E0680D30076881C /* AppDelegate.m in Sources */,
+				2D55A6DD1EC5AAA40010005F /* CompalyDetailsViewController.m in Sources */,
 				2D846B9F1E08D79700EE3B3E /* UIView+SDExtension.m in Sources */,
 				2D846B9C1E08D79700EE3B3E /* TAPageControl.m in Sources */,
 				2D6B0BDE1EC05D6F00F59DB4 /* TZImageCropManager.m in Sources */,
@@ -1052,6 +1013,7 @@
 				2D6B0BE31EC05D6F00F59DB4 /* TZPhotoPreviewCell.m in Sources */,
 				2D57D9121E1516E5009DCB9E /* POPAnimator.mm in Sources */,
 				2D6B0BE41EC05D6F00F59DB4 /* TZPhotoPreviewController.m in Sources */,
+				2D55A6DA1EC594F70010005F /* SecondViewController.m in Sources */,
 				2D846C4A1E090FE300EE3B3E /* UIScrollView+MJExtension.m in Sources */,
 				2D846C3D1E090FE300EE3B3E /* MJRefreshFooter.m in Sources */,
 				18E7DEBB1E0680D30076881C /* main.m in Sources */,

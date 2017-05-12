@@ -26,10 +26,10 @@
     [super viewDidLoad];
     scaleFloat = 2;
     
-//    [self myDecayAnimation];//衰减动画
-//    [self mySpringAnimation];//弹簧动画
+    [self myDecayAnimation];//衰减动画
+    [self mySpringAnimation];//弹簧动画
     
-    [self myGesture];
+//    [self myGesture];
 }
 
 //手势

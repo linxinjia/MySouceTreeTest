@@ -11,6 +11,7 @@
 #import "InvestViewController.h"
 #import "FinedViewController.h"
 #import "MineViewController.h"
+#import "SecondViewController.h"
 
 @interface AppDelegate ()
 
@@ -30,10 +31,12 @@
     navgController.navigationBar.barTintColor = [UIColor colorWithRed:251/255.0 green:208/255.0 blue:30/255.0 alpha:1];
     navgController.navigationBar.tintColor = [UIColor blackColor];
     
-    InvestViewController *investViewController = [InvestViewController new];
+//    InvestViewController *investViewController = [InvestViewController new];
+    SecondViewController *investViewController = [SecondViewController new];
     investViewController.title = @"投资";
     UINavigationController *navgController2 = [[UINavigationController alloc]initWithRootViewController:investViewController];
     navgController2.navigationBar.barTintColor = [UIColor colorWithRed:251/255.0 green:208/255.0 blue:30/255.0 alpha:1];
+    navgController2.navigationBar.tintColor = [UIColor blackColor];
 
     FinedViewController *finedViewController = [FinedViewController new];
     finedViewController.title = @"发现";

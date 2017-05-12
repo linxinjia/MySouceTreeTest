@@ -12,7 +12,7 @@
 {
     NSURLConnection *_connection;
 }
-//POP动画引擎的动画效果非常流畅，因为它使用了CADisplayLink来刷新画面（帧）
+
 @property (nonatomic ,strong) CADisplayLink *displayLink;
 @property (nonatomic) NSInteger count;
 @property (nonatomic ,strong) NSMutableArray *array;
@@ -28,6 +28,7 @@
     [self connectionPart];
     
     
+    //谓词
     NSArray *names = @[@"张三", @"李五", @"王五"];
     NSPredicate *containsN = [NSPredicate predicateWithFormat:@"SELF BEGINSWITH '张' OR  SELF CONTAINS '王'" ];
     NSArray *array = [names filteredArrayUsingPredicate:containsN];
@@ -36,9 +37,9 @@
     
     
     
-//    self.displayLink =[CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkEvent:)];
-//    [self performSelector:@selector(eventOne) withObject:nil afterDelay:1.f];
-//    [self performSelector:@selector(eventTwo) withObject:nil afterDelay:2.f];
+    self.displayLink =[CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkEvent:)];
+    [self performSelector:@selector(eventOne) withObject:nil afterDelay:1.f];
+    [self performSelector:@selector(eventTwo) withObject:nil afterDelay:2.f];
     
     
     

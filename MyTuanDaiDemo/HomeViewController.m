@@ -12,7 +12,6 @@
 //#import "TAPageControl.h"
 #import "MJRefresh.h"
 #import "CloseLimitAdvertiseView.h"
-#import "QualityCertificationViewController.h"
 #import "PhotoPickerViewController.h"
 
 @interface HomeViewController ()<SDCycleScrollViewDelegate>
@@ -284,17 +283,11 @@
 }
 
 - (void)clickedSelfty{
-//    UIViewController *viewcontroller = [UIViewController new];
-//    viewcontroller.view.backgroundColor = [UIColor whiteColor];
-//    viewcontroller.title = @"安全保障";
-//    [self openView:viewcontroller];
-//    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    
-    
-    QualityCertificationViewController *qualityCertificationVC = [QualityCertificationViewController new];
-    [self openView:qualityCertificationVC];
-    
-    
+    UIViewController *viewcontroller = [UIViewController new];
+    viewcontroller.view.backgroundColor = [UIColor whiteColor];
+    viewcontroller.title = @"安全保障";
+    [self openView:viewcontroller];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
 //    CloseLimitAdvertiseView *closeLimitAdvertiseView = [CloseLimitAdvertiseView new];
 //    [self.view addSubview:closeLimitAdvertiseView];

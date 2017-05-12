@@ -42,7 +42,7 @@
 		2D57D9201E151D1C009DCB9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D57D91F1E151D1C009DCB9E /* CoreGraphics.framework */; };
 		2D57D9221E151D24009DCB9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D57D9211E151D24009DCB9E /* UIKit.framework */; };
 		2D57D9241E151D31009DCB9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D57D9231E151D31009DCB9E /* Foundation.framework */; };
-		2D6B0BD91EC05D6F00F59DB4 /* TDImageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B0BBC1EC05D6E00F59DB4 /* TDImageViewManager.m */; };
+		2D6B0BD91EC05D6F00F59DB4 /* TDPhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B0BBC1EC05D6E00F59DB4 /* TDPhotosManager.m */; };
 		2D6B0BDA1EC05D6F00F59DB4 /* NSBundle+TZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B0BBF1EC05D6E00F59DB4 /* NSBundle+TZImagePicker.m */; };
 		2D6B0BDB1EC05D6F00F59DB4 /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B0BC11EC05D6E00F59DB4 /* TZAssetCell.m */; };
 		2D6B0BDC1EC05D6F00F59DB4 /* TZAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B0BC31EC05D6E00F59DB4 /* TZAssetModel.m */; };
@@ -218,8 +218,8 @@
 		2D57D91F1E151D1C009DCB9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2D57D9211E151D24009DCB9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2D57D9231E151D31009DCB9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2D6B0BBB1EC05D6E00F59DB4 /* TDImageViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDImageViewManager.h; sourceTree = "<group>"; };
-		2D6B0BBC1EC05D6E00F59DB4 /* TDImageViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDImageViewManager.m; sourceTree = "<group>"; };
+		2D6B0BBB1EC05D6E00F59DB4 /* TDPhotosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPhotosManager.h; sourceTree = "<group>"; };
+		2D6B0BBC1EC05D6E00F59DB4 /* TDPhotosManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPhotosManager.m; sourceTree = "<group>"; };
 		2D6B0BBE1EC05D6E00F59DB4 /* NSBundle+TZImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+TZImagePicker.h"; sourceTree = "<group>"; };
 		2D6B0BBF1EC05D6E00F59DB4 /* NSBundle+TZImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+TZImagePicker.m"; sourceTree = "<group>"; };
 		2D6B0BC01EC05D6E00F59DB4 /* TZAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZAssetCell.h; sourceTree = "<group>"; };
@@ -597,8 +597,8 @@
 			isa = PBXGroup;
 			children = (
 				2D6B0BBD1EC05D6E00F59DB4 /* TZImagePickerController */,
-				2D6B0BBB1EC05D6E00F59DB4 /* TDImageViewManager.h */,
-				2D6B0BBC1EC05D6E00F59DB4 /* TDImageViewManager.m */,
+				2D6B0BBB1EC05D6E00F59DB4 /* TDPhotosManager.h */,
+				2D6B0BBC1EC05D6E00F59DB4 /* TDPhotosManager.m */,
 			);
 			path = "照片管理器";
 			sourceTree = "<group>";
@@ -1061,7 +1061,7 @@
 				2D57D90C1E1516E5009DCB9E /* POPAnimatableProperty.mm in Sources */,
 				2D6B0BDC1EC05D6F00F59DB4 /* TZAssetModel.m in Sources */,
 				2DBA2B071E078FB10085E471 /* HomeViewController.m in Sources */,
-				2D6B0BD91EC05D6F00F59DB4 /* TDImageViewManager.m in Sources */,
+				2D6B0BD91EC05D6F00F59DB4 /* TDPhotosManager.m in Sources */,
 				2D846BC61E08DD8200EE3B3E /* NSData+ImageContentType.m in Sources */,
 				2D6B0BE11EC05D6F00F59DB4 /* TZImagePickerController.m in Sources */,
 				2DBA2B041E076FBE0085E471 /* MyHomeViewModel.m in Sources */,

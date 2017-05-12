@@ -6,12 +6,12 @@
 //  Copyright © 2017年 tuandaiwang. All rights reserved.
 //
 
-#import "TDImageViewManager.h"
+#import "TDPhotosManager.h"
 #import "TZImagePickerController.h"
 #import <Photos/Photos.h>
 #import "TZImageManager.h"
 
-@interface TDImageViewManager ()<TZImagePickerControllerDelegate,UIAlertViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface TDPhotosManager ()<TZImagePickerControllerDelegate,UIAlertViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     NSMutableArray *_selectedPhotos;
     NSMutableArray *_selectedAssets;
@@ -20,9 +20,9 @@
 
 @end
 
-@implementation TDImageViewManager
+@implementation TDPhotosManager
 
-+ (TDImageViewManager *)shareInstance {
++ (TDPhotosManager *)shareInstance {
     static dispatch_once_t once;
     static id instance;
     dispatch_once(&once, ^{
@@ -31,15 +31,27 @@
     return instance;
 }
 
-/**
- 选择单张照片
- 
- @param controller 控制器
- */
-- (void)toSelectImage:(UIViewController *)controller completion:(void (^)(NSArray<UIImage *> *photos))completion{
+//选择单张照片
+- (void)toSelectImageDelegate:(id<TDPhotosManagerDelegate>)delegate{
+    [self toSelectImageDelegate:delegate alowCrop:NO];
+}
+
+//选择单张照片可裁剪,使用方形剪切 (查看大图时是展示剪切前的照片)
+- (void)toSelectImageDelegate:(id<TDPhotosManagerDelegate>)delegate alowCrop:(BOOL)alowCrop{
+    [self toSelectImageDelegate:delegate alowCrop:alowCrop circleCrop:NO];
+}
+
+//选择单张照片可裁剪,使用圆形剪切 (查看大图时是展示剪切前的照片)
+- (void)toSelectImageDelegate:(id<TDPhotosManagerDelegate>)delegate alowCrop:(BOOL)alowCrop circleCrop:(BOOL)circleCrop{
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
+    //设置imagePickerVc的外观
+    if (self.ifFitToNavigationBarColor == YES) {
+        imagePickerVc.naviBgColor = ((UIViewController *)delegate).navigationController.navigationBar.barTintColor;
+        imagePickerVc.naviTitleColor = ((UIViewController *)delegate).navigationController.navigationBar.tintColor;
+        imagePickerVc.barItemTextColor = ((UIViewController *)delegate).navigationController.navigationBar.tintColor;
+        imagePickerVc.navigationBar.tintColor = ((UIViewController *)delegate).navigationController.navigationBar.tintColor;
+    }
     
-    imagePickerVc.showSelectBtn = NO;//单选模式下此设置才会有效
     imagePickerVc.allowTakePicture = NO;
     imagePickerVc.allowPickingGif = NO;
     imagePickerVc.allowPickingVideo = NO;
@@ -48,21 +60,38 @@
         NSLog(@"获取到照片");
         _selectedPhotos = [NSMutableArray arrayWithArray:photos];
         _selectedAssets = [NSMutableArray arrayWithArray:assets];
-        if (completion) {
-            completion(photos);
+        
+        if ([self.delegate respondsToSelector:@selector(getPhotosSuccess:)]) {
+            [self.delegate getPhotosSuccess:[NSMutableArray arrayWithArray:photos]];
         }
     };
-    [controller presentViewController:imagePickerVc animated:YES completion:nil];
+    [((UIViewController *)delegate) presentViewController:imagePickerVc animated:YES completion:nil];
+    
+    imagePickerVc.allowCrop = alowCrop;
+    imagePickerVc.needCircleCrop = circleCrop;
 }
 
-/**
- 选择多张照片
- 
- @param controller 控制器
- @param count 最多可选张数
- */
-- (void)toSelectImages:(UIViewController *)controller maxImagesCount:(NSInteger)count completion:(void (^)(NSArray<UIImage *> *photos))completion{
+//选择多张照片
+- (void)toSelectImagesDelegate:(id<TDPhotosManagerDelegate>)delegate selectedPhotos:(NSMutableArray *)selectedPhotos maxImagesCount:(NSInteger)count{
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:count delegate:self];
+    if (selectedPhotos == nil || selectedPhotos.count == 0) {
+        _selectedPhotos = nil;
+        _selectedAssets = nil;
+    }
+    
+    //判断照片数据是否在管理器外进行了删减操作
+    if (selectedPhotos.count > 0 && selectedPhotos.count < _selectedPhotos.count) {
+        [self manageSelectedPhotos:selectedPhotos];
+    }
+    
+    imagePickerVc.selectedAssets = _selectedAssets; // 目前已经选中的图片数组
+    //设置imagePickerVc的外观
+    if (self.ifFitToNavigationBarColor == YES) {
+        imagePickerVc.naviBgColor = ((UIViewController *)delegate).navigationController.navigationBar.barTintColor;
+        imagePickerVc.naviTitleColor = ((UIViewController *)delegate).navigationController.navigationBar.tintColor;
+        imagePickerVc.barItemTextColor = ((UIViewController *)delegate).navigationController.navigationBar.tintColor;
+        imagePickerVc.navigationBar.tintColor = ((UIViewController *)delegate).navigationController.navigationBar.tintColor;
+    }
     
     imagePickerVc.allowTakePicture = NO;
     imagePickerVc.allowPickingGif = NO;
@@ -72,67 +101,51 @@
         NSLog(@"获取到照片");
         _selectedPhotos = [NSMutableArray arrayWithArray:photos];
         _selectedAssets = [NSMutableArray arrayWithArray:assets];
-        if (completion) {
-            completion(photos);
+        
+        if ([self.delegate respondsToSelector:@selector(getPhotosSuccess:)]) {
+            [self.delegate getPhotosSuccess:[NSMutableArray arrayWithArray:photos]];
         }
     };
-    [controller presentViewController:imagePickerVc animated:YES completion:nil];
+    [((UIViewController *)delegate) presentViewController:imagePickerVc animated:YES completion:nil];
 }
 
+//查看照片 (只能在选取照片后并查看时使用，不适用于其他图片查看)
+- (void)checkPhotosDelegate:(id<TDPhotosManagerDelegate>)delegate photos:(NSMutableArray *)photos index:(NSInteger)index{
+    [self checkPhotosDelegate:delegate photos:photos index:index alowRemove:NO];
+}
 
-
-/**
- 查看照片,index表示图片开始显示位置 (这个方法只能用来查看照片类型的图，因为assets不能为空)
- 
- @param photos 照片
- @param controller 控制器
- */
-- (void)lookOverPhotos:(NSMutableArray *)photos index:(NSInteger)index controller:(UIViewController *)controller completion:(void (^)(NSArray<UIImage *> *photos))completion{
-    //判断照片数据是否在管理器外进行了删减或重新排序（如果是增加，管理器里面的数据也会相应增加，所以不用做处理）
+//查看照片并可对照片进行删除操作 (只能在选取照片后并查看时使用，不适用于其他图片查看)
+- (void)checkPhotosDelegate:(id<TDPhotosManagerDelegate>)delegate photos:(NSMutableArray *)photos index:(NSInteger)index alowRemove:(BOOL)alowRemove{
+    //判断照片数据是否在管理器外进行了删减操作
     if (photos == nil || photos.count == 0) {
-        NSLog(@"请选择有效的照片进行查看");
+        NSLog(@"照片数据为空，无法查看");
+        _selectedPhotos = nil;
+        _selectedAssets = nil;
         return;
     }
     if (photos.count < _selectedPhotos.count) {
-        NSMutableArray *assets = [NSMutableArray new];
-        for (NSInteger j=0; j<photos.count; j++) {
-            for (NSInteger i=0; i<_selectedPhotos.count; i++) {
-                if ([photos[j] isEqual:_selectedPhotos[i]]) {
-                    [assets addObject:_selectedAssets[i]];
-                }
-            }
-        }
-        if (assets == nil || assets.count == 0) {
-            NSLog(@"请选择有效的照片进行查看");
-            return;
-        }else{
-            _selectedAssets = assets;
-        }
+        [self manageSelectedPhotos:photos];
     }
     
-    
-    
-    
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithSelectedAssets:_selectedAssets selectedPhotos:photos index:index];
-//    imagePickerVc.maxImagesCount = photos.count; //当这个参数大于1时可以在查看页面对照片进行勾选操作
     imagePickerVc.allowPickingOriginalPhoto = NO;
-    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
-        _selectedPhotos = [NSMutableArray arrayWithArray:photos];
-        _selectedAssets = [NSMutableArray arrayWithArray:assets];
-        if (completion) {
-            completion(photos);
-        }
-    }];
-    [controller presentViewController:imagePickerVc animated:YES completion:nil];
+    
+    if (alowRemove == YES) {
+        imagePickerVc.maxImagesCount = photos.count > 1 ? photos.count : 2; //当这个参数大于1时可以在查看页面对照片进行勾选操作
+        [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+            _selectedPhotos = [NSMutableArray arrayWithArray:photos];
+            _selectedAssets = [NSMutableArray arrayWithArray:assets];
+            
+            if ([self.delegate respondsToSelector:@selector(getPhotosSuccess:)]) {
+                [self.delegate getPhotosSuccess:[NSMutableArray arrayWithArray:photos]];
+            }
+        }];
+    }
+    [((UIViewController *)delegate) presentViewController:imagePickerVc animated:YES completion:nil];
 }
 
-
 #pragma mark - 相机
-/**
- 拍照
- 
- @param controller 控制器
- */
+//拍照
 - (void)takePhoto:(UIViewController *)controller{
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if ((authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied) && iOS7Later) {
@@ -148,7 +161,7 @@
         [alert show];
     } else if ([TZImageManager authorizationStatus] == 0) { // 正在弹框询问用户是否允许访问相册，监听权限状态
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            return [self takePhoto];
+            //            return [self takePhoto];
         });
     } else { // 调用相机
         UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -191,7 +204,9 @@
                         _selectedPhotos = [NSMutableArray arrayWithObject:image];
                         _selectedAssets = [NSMutableArray arrayWithObject:assetModel.asset];
                         //用代理方法把照片传回
-                        [self.delegate takePhotoSuccess:[NSMutableArray arrayWithObject:image]];
+                        if ([self.delegate respondsToSelector:@selector(getPhotosSuccess:)]) {
+                            [self.delegate getPhotosSuccess:[NSMutableArray arrayWithObject:image]];
+                        }
                     }];
                 }];
             }
@@ -227,22 +242,31 @@
     }
 }
 
-#pragma mark - TZImagePickerControllerDelegate
-//- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto {
-//    _selectedPhotos = [NSMutableArray arrayWithArray:photos];
-//    _selectedAssets = [NSMutableArray arrayWithArray:assets];
-//}
-
+#pragma mark - method
+//如果照片数据在管理器外进行了删减或重新排序等操作，则对管理器中暂存的数据进行调整
+- (void)manageSelectedPhotos:(NSMutableArray *)photos{
+    NSMutableArray *assets = [NSMutableArray new];
+    for (NSInteger j=0; j<photos.count; j++) {
+        for (NSInteger i=0; i<_selectedPhotos.count; i++) {
+            if ([photos[j] isEqual:_selectedPhotos[i]]) {
+                [assets addObject:_selectedAssets[i]];
+            }
+        }
+    }
+    if (assets == nil || assets.count == 0) {
+        NSLog(@"请选择有效的照片进行查看");
+        return;
+    }else{
+        _selectedPhotos = photos;
+        _selectedAssets = assets;
+    }
+}
 
 #pragma mark - getters
 - (UIImagePickerController *)imagePickerVc {
     if (_imagePickerVc == nil) {
         _imagePickerVc = [[UIImagePickerController alloc] init];
         _imagePickerVc.delegate = self;
-        // set appearance / 改变相册选择页的导航栏外观
-        
-//        _imagePickerVc.navigationBar.barTintColor = self.navigationController.navigationBar.barTintColor;
-//        _imagePickerVc.navigationBar.tintColor = self.navigationController.navigationBar.tintColor;
         UIBarButtonItem *tzBarItem, *BarItem;
         if (iOS9Later) {
             tzBarItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[TZImagePickerController class]]];
@@ -256,6 +280,5 @@
     }
     return _imagePickerVc;
 }
-
 
 @end

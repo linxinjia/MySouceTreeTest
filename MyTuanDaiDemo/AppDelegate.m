@@ -28,6 +28,7 @@
     homeViewController.title = @"团贷网";
     UINavigationController *navgController = [[UINavigationController alloc]initWithRootViewController:homeViewController];
     navgController.navigationBar.barTintColor = [UIColor colorWithRed:251/255.0 green:208/255.0 blue:30/255.0 alpha:1];
+    navgController.navigationBar.tintColor = [UIColor blackColor];
     
     InvestViewController *investViewController = [InvestViewController new];
     investViewController.title = @"投资";

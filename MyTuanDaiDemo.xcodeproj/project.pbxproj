@@ -468,8 +468,9 @@
 		2D55A6D71EC5921D0010005F /* 招聘页面 */ = {
 			isa = PBXGroup;
 			children = (
-				2D55A6DB1EC5AAA40010005F /* CompalyDetailsViewController.h */,
-				2D55A6DC1EC5AAA40010005F /* CompalyDetailsViewController.m */,
+				2D7520491EC98B4C00303216 /* Model */,
+				2D7520481EC98B4300303216 /* View */,
+				2D7520471EC98B3000303216 /* Controller */,
 			);
 			path = "招聘页面";
 			sourceTree = "<group>";
@@ -596,6 +597,29 @@
 				2D6B0BD81EC05D6F00F59DB4 /* UIView+Layout.m */,
 			);
 			path = TZImagePickerController;
+			sourceTree = "<group>";
+		};
+		2D7520471EC98B3000303216 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2D55A6DB1EC5AAA40010005F /* CompalyDetailsViewController.h */,
+				2D55A6DC1EC5AAA40010005F /* CompalyDetailsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2D7520481EC98B4300303216 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2D7520491EC98B4C00303216 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		2D846B891E08D79700EE3B3E /* SDCycleScrollView */ = {

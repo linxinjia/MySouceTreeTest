@@ -18,34 +18,66 @@
 
 @implementation CompalyDetailsViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     size = [UIScreen mainScreen].bounds.size;
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, size.width, size.height-64-50) style:UITableViewStylePlain];
+    [self setupView];
+    [self setupData];
+}
+
+#pragma mark-- setup
+
+- (void)setupView{
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+    
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 100, 40)];
+    [self.view addSubview:backButton];
+    [backButton setImage:[UIImage imageNamed:@"back_red"] forState:UIControlStateNormal];
+    [backButton setImageEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 80)];
+    [backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
 }
 
-#pragma mark-- setup
 - (void)setupData{
     
 }
-- (void)setupView{
-    
+
+#pragma mark - action
+- (void)goBack{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITableViewDelegate
-- (NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 5;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellReuse = @"UITableViewCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuse];
@@ -68,7 +100,6 @@
     
     return cell;
 }
-
 
 #pragma mark - getters
 

@@ -7,6 +7,9 @@
 //
 
 #import "CompalyDetailsViewController.h"
+#import "CompanyDetailHeadView.h"
+#import "CompanyDetailInfoCell.h"
+#import "CompanyDetailIntroductionCell.h"
 
 @interface CompalyDetailsViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -41,16 +44,17 @@
 #pragma mark-- setup
 
 - (void)setupView{
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height) style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+//    self.tableView.
     
     
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 100, 40)];
     [self.view addSubview:backButton];
-    [backButton setImage:[UIImage imageNamed:@"back_red"] forState:UIControlStateNormal];
+    [backButton setImage:[UIImage imageNamed:@"back_white"] forState:UIControlStateNormal];
     [backButton setImageEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 80)];
     [backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -67,15 +71,19 @@
 #pragma mark - UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 160+50;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -85,6 +93,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellReuse];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
+    
+    
     
     switch (indexPath.row) {
         case 0:{
@@ -100,6 +110,12 @@
     
     return cell;
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"CompanyDetailHeadView" owner:nil options:nil];
+    return [views objectAtIndex:0];
+}
+
 
 #pragma mark - getters
 

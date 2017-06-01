@@ -8,6 +8,7 @@
 
 #import "SecondViewController.h"
 #import "CompalyDetailsViewController.h"
+#import "UIViewController+Debugging.h"
 
 @interface SecondViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -31,6 +32,9 @@
     [self.view addSubview:self.tableView];
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    
+    //使用苹果的OC调试工具
+//    [self showDebugger];
 }
 
 

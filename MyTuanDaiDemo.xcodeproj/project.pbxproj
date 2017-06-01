@@ -47,6 +47,7 @@
 		2D57D9201E151D1C009DCB9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D57D91F1E151D1C009DCB9E /* CoreGraphics.framework */; };
 		2D57D9221E151D24009DCB9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D57D9211E151D24009DCB9E /* UIKit.framework */; };
 		2D57D9241E151D31009DCB9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D57D9231E151D31009DCB9E /* Foundation.framework */; };
+		2D58A7FA1EDFAAB5007C0B8E /* UIViewController+Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D58A7F91EDFAAB5007C0B8E /* UIViewController+Debugging.m */; };
 		2D6B0BD91EC05D6F00F59DB4 /* TDPhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B0BBC1EC05D6E00F59DB4 /* TDPhotosManager.m */; };
 		2D6B0BDA1EC05D6F00F59DB4 /* NSBundle+TZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B0BBF1EC05D6E00F59DB4 /* NSBundle+TZImagePicker.m */; };
 		2D6B0BDB1EC05D6F00F59DB4 /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B0BC11EC05D6E00F59DB4 /* TZAssetCell.m */; };
@@ -168,8 +169,8 @@
 		2D1A90411E4C46A300CC1BA3 /* CloseLimitAdvertiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloseLimitAdvertiseView.m; sourceTree = "<group>"; };
 		2D4337341E0A0B71006FEAA5 /* MyCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomButton.h; sourceTree = "<group>"; };
 		2D4337351E0A0B71006FEAA5 /* MyCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomButton.m; sourceTree = "<group>"; };
-		2D55A6D81EC594F70010005F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		2D55A6D91EC594F70010005F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		2D55A6D81EC594F70010005F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondViewController.h; path = ../SecondViewController.h; sourceTree = "<group>"; };
+		2D55A6D91EC594F70010005F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondViewController.m; path = ../SecondViewController.m; sourceTree = "<group>"; };
 		2D55A6DB1EC5AAA40010005F /* CompalyDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompalyDetailsViewController.h; sourceTree = "<group>"; };
 		2D55A6DC1EC5AAA40010005F /* CompalyDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompalyDetailsViewController.m; sourceTree = "<group>"; };
 		2D57D8D11E1516E5009DCB9E /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
@@ -230,6 +231,8 @@
 		2D57D91F1E151D1C009DCB9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2D57D9211E151D24009DCB9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2D57D9231E151D31009DCB9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2D58A7F81EDFAAB5007C0B8E /* UIViewController+Debugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Debugging.h"; sourceTree = "<group>"; };
+		2D58A7F91EDFAAB5007C0B8E /* UIViewController+Debugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Debugging.m"; sourceTree = "<group>"; };
 		2D6B0BBB1EC05D6E00F59DB4 /* TDPhotosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPhotosManager.h; sourceTree = "<group>"; };
 		2D6B0BBC1EC05D6E00F59DB4 /* TDPhotosManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPhotosManager.m; sourceTree = "<group>"; };
 		2D6B0BBE1EC05D6E00F59DB4 /* NSBundle+TZImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+TZImagePicker.h"; sourceTree = "<group>"; };
@@ -434,6 +437,7 @@
 				2DBA2B111E07B0670085E471 /* View */,
 				2DBA2B011E076FBE0085E471 /* MyHomeViewModel.h */,
 				2DBA2B021E076FBE0085E471 /* MyHomeViewModel.m */,
+				2D58A7F71EDFA9AE007C0B8E /* 类别 */,
 				2D4337371E0A0C1B006FEAA5 /* Tool */,
 				2D846BD51E08DD9800EE3B3E /* Library */,
 				18E7DEC51E0680D30076881C /* Assets.xcassets */,
@@ -483,6 +487,8 @@
 		2D55A6D71EC5921D0010005F /* 招聘页面 */ = {
 			isa = PBXGroup;
 			children = (
+				2D55A6D81EC594F70010005F /* SecondViewController.h */,
+				2D55A6D91EC594F70010005F /* SecondViewController.m */,
 				2D7520491EC98B4C00303216 /* Model */,
 				2D7520481EC98B4300303216 /* View */,
 				2D7520471EC98B3000303216 /* Controller */,
@@ -568,6 +574,15 @@
 				2D57D91F1E151D1C009DCB9E /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D58A7F71EDFA9AE007C0B8E /* 类别 */ = {
+			isa = PBXGroup;
+			children = (
+				2D58A7F81EDFAAB5007C0B8E /* UIViewController+Debugging.h */,
+				2D58A7F91EDFAAB5007C0B8E /* UIViewController+Debugging.m */,
+			);
+			name = "类别";
 			sourceTree = "<group>";
 		};
 		2D6B0BBA1EC05D6E00F59DB4 /* 照片管理器 */ = {
@@ -854,8 +869,6 @@
 				2DBA2B061E078FB10085E471 /* HomeViewController.m */,
 				2DBA2B081E078FCE0085E471 /* InvestViewController.h */,
 				2DBA2B091E078FCE0085E471 /* InvestViewController.m */,
-				2D55A6D81EC594F70010005F /* SecondViewController.h */,
-				2D55A6D91EC594F70010005F /* SecondViewController.m */,
 				2DBA2B0B1E078FE50085E471 /* FinedViewController.h */,
 				2DBA2B0C1E078FE50085E471 /* FinedViewController.m */,
 				2DBA2B0E1E078FFA0085E471 /* MineViewController.h */,
@@ -1100,6 +1113,7 @@
 				2D57D9101E1516E5009DCB9E /* POPAnimationRuntime.mm in Sources */,
 				2D846BC51E08DD8200EE3B3E /* MKAnnotationView+WebCache.m in Sources */,
 				2D846BC81E08DD8200EE3B3E /* SDWebImageCompat.m in Sources */,
+				2D58A7FA1EDFAAB5007C0B8E /* UIViewController+Debugging.m in Sources */,
 				2D846BCE1E08DD8200EE3B3E /* UIButton+WebCache.m in Sources */,
 				2D846C3C1E090FE300EE3B3E /* MJRefreshComponent.m in Sources */,
 				2D846C411E090FE300EE3B3E /* MJRefreshAutoStateFooter.m in Sources */,
@@ -1257,6 +1271,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9QGX249ZE2;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = MyTuanDaiDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

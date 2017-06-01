@@ -437,7 +437,7 @@
 				2DBA2B111E07B0670085E471 /* View */,
 				2DBA2B011E076FBE0085E471 /* MyHomeViewModel.h */,
 				2DBA2B021E076FBE0085E471 /* MyHomeViewModel.m */,
-				2D58A7F71EDFA9AE007C0B8E /* 类别 */,
+				2D58A7F71EDFA9AE007C0B8E /* 类别(截屏拦截) */,
 				2D4337371E0A0C1B006FEAA5 /* Tool */,
 				2D846BD51E08DD9800EE3B3E /* Library */,
 				18E7DEC51E0680D30076881C /* Assets.xcassets */,
@@ -576,13 +576,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2D58A7F71EDFA9AE007C0B8E /* 类别 */ = {
+		2D58A7F71EDFA9AE007C0B8E /* 类别(截屏拦截) */ = {
 			isa = PBXGroup;
 			children = (
 				2D58A7F81EDFAAB5007C0B8E /* UIViewController+Debugging.h */,
 				2D58A7F91EDFAAB5007C0B8E /* UIViewController+Debugging.m */,
 			);
-			name = "类别";
+			name = "类别(截屏拦截)";
 			sourceTree = "<group>";
 		};
 		2D6B0BBA1EC05D6E00F59DB4 /* 照片管理器 */ = {

@@ -9,6 +9,7 @@
 #import "SecondViewController.h"
 #import "CompalyDetailsViewController.h"
 #import "UIViewController+Debugging.h"
+#import "TDFeedBackViewController.h"
 
 @interface SecondViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -74,6 +75,12 @@
             CompalyDetailsViewController *compalyDetailsVC = [CompalyDetailsViewController new];
             compalyDetailsVC.title = @"公司";
             [self openView:compalyDetailsVC];
+            break;
+        }
+        case 1:{
+            TDFeedBackViewController *feedBackViewC = [TDFeedBackViewController new];
+            feedBackViewC.title = @"公司";
+            [self openView:feedBackViewC];
             break;
         }
             

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18950D251EE4233200DBB80A /* TDFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18950D241EE4233200DBB80A /* TDFeedBackViewController.m */; };
 		18E7DEBB1E0680D30076881C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E7DEBA1E0680D30076881C /* main.m */; };
 		18E7DEBE1E0680D30076881C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E7DEBD1E0680D30076881C /* AppDelegate.m */; };
 		18E7DEC61E0680D30076881C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E7DEC51E0680D30076881C /* Assets.xcassets */; };
@@ -143,6 +144,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18950D231EE4233200DBB80A /* TDFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDFeedBackViewController.h; sourceTree = "<group>"; };
+		18950D241EE4233200DBB80A /* TDFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDFeedBackViewController.m; sourceTree = "<group>"; };
 		18E7DEB61E0680D30076881C /* MyTuanDaiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTuanDaiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E7DEBA1E0680D30076881C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18E7DEBC1E0680D30076881C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -403,6 +406,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18950D221EE40F2000DBB80A /* 意见反馈 */ = {
+			isa = PBXGroup;
+			children = (
+				18950D231EE4233200DBB80A /* TDFeedBackViewController.h */,
+				18950D241EE4233200DBB80A /* TDFeedBackViewController.m */,
+			);
+			name = "意见反馈";
+			sourceTree = "<group>";
+		};
 		18E7DEAD1E0680D30076881C = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +443,7 @@
 				18E7DEBD1E0680D30076881C /* AppDelegate.m */,
 				2DBA2B141E07EA290085E471 /* BaseViewController.h */,
 				2DBA2B151E07EA290085E471 /* BaseViewController.m */,
+				18950D221EE40F2000DBB80A /* 意见反馈 */,
 				2D55A6D71EC5921D0010005F /* 招聘页面 */,
 				2D6B0BBA1EC05D6E00F59DB4 /* 照片管理器 */,
 				2DBA2B131E07B08A0085E471 /* Controller */,
@@ -1117,6 +1130,7 @@
 				2D846BCE1E08DD8200EE3B3E /* UIButton+WebCache.m in Sources */,
 				2D846C3C1E090FE300EE3B3E /* MJRefreshComponent.m in Sources */,
 				2D846C411E090FE300EE3B3E /* MJRefreshAutoStateFooter.m in Sources */,
+				18950D251EE4233200DBB80A /* TDFeedBackViewController.m in Sources */,
 				2D57D91C1E1516E5009DCB9E /* POPVector.mm in Sources */,
 				2D846BD21E08DD8200EE3B3E /* UIImageView+HighlightedWebCache.m in Sources */,
 				2D0EEAA71ED2E63C007F3AA7 /* CompanyDetailInfoCell.m in Sources */,

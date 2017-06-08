@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDFeedBackViewController : UIViewController
+@interface TDAdviceViewController : UIViewController
 
 @end

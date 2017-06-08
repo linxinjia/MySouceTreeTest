@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  MyTuanDaiDemo
+//
+//  Created by linxinjia on 2017/6/5.
+//  Copyright © 2017年 Apple. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "TDHelperMacros.h"
+
+#endif 

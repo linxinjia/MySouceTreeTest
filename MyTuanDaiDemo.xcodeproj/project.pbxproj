@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18950D251EE4233200DBB80A /* TDFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18950D241EE4233200DBB80A /* TDFeedBackViewController.m */; };
 		18E7DEBB1E0680D30076881C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E7DEBA1E0680D30076881C /* main.m */; };
 		18E7DEBE1E0680D30076881C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E7DEBD1E0680D30076881C /* AppDelegate.m */; };
 		18E7DEC61E0680D30076881C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E7DEC51E0680D30076881C /* Assets.xcassets */; };
@@ -110,6 +109,7 @@
 		2D846C4A1E090FE300EE3B3E /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D846C351E090FE300EE3B3E /* UIScrollView+MJExtension.m */; };
 		2D846C4B1E090FE300EE3B3E /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D846C371E090FE300EE3B3E /* UIScrollView+MJRefresh.m */; };
 		2D846C4C1E090FE300EE3B3E /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D846C391E090FE300EE3B3E /* UIView+MJExtension.m */; };
+		2D97EE561EE50609009C11F1 /* TDAdviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97EE551EE50609009C11F1 /* TDAdviceViewController.m */; };
 		2DBA2AF21E076E7A0085E471 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBA2AE51E076E7A0085E471 /* icon.png */; };
 		2DBA2AF31E076E7A0085E471 /* icon_data.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBA2AE61E076E7A0085E471 /* icon_data.png */; };
 		2DBA2AF81E076E7A0085E471 /* Icon_safety.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBA2AEB1E076E7A0085E471 /* Icon_safety.png */; };
@@ -144,8 +144,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		18950D231EE4233200DBB80A /* TDFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDFeedBackViewController.h; sourceTree = "<group>"; };
-		18950D241EE4233200DBB80A /* TDFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDFeedBackViewController.m; sourceTree = "<group>"; };
 		18E7DEB61E0680D30076881C /* MyTuanDaiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTuanDaiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E7DEBA1E0680D30076881C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18E7DEBC1E0680D30076881C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -355,6 +353,10 @@
 		2D846C371E090FE300EE3B3E /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		2D846C381E090FE300EE3B3E /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		2D846C391E090FE300EE3B3E /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		2D97EE541EE50609009C11F1 /* TDAdviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAdviceViewController.h; sourceTree = "<group>"; };
+		2D97EE551EE50609009C11F1 /* TDAdviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAdviceViewController.m; sourceTree = "<group>"; };
+		2D97EE571EE53BF8009C11F1 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2D97EE581EE53D8C009C11F1 /* TDHelperMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHelperMacros.h; sourceTree = "<group>"; };
 		2DBA2AE51E076E7A0085E471 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2DBA2AE61E076E7A0085E471 /* icon_data.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_data.png; sourceTree = "<group>"; };
 		2DBA2AEB1E076E7A0085E471 /* Icon_safety.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_safety.png; sourceTree = "<group>"; };
@@ -406,15 +408,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18950D221EE40F2000DBB80A /* 意见反馈 */ = {
-			isa = PBXGroup;
-			children = (
-				18950D231EE4233200DBB80A /* TDFeedBackViewController.h */,
-				18950D241EE4233200DBB80A /* TDFeedBackViewController.m */,
-			);
-			name = "意见反馈";
-			sourceTree = "<group>";
-		};
 		18E7DEAD1E0680D30076881C = {
 			isa = PBXGroup;
 			children = (
@@ -443,7 +436,7 @@
 				18E7DEBD1E0680D30076881C /* AppDelegate.m */,
 				2DBA2B141E07EA290085E471 /* BaseViewController.h */,
 				2DBA2B151E07EA290085E471 /* BaseViewController.m */,
-				18950D221EE40F2000DBB80A /* 意见反馈 */,
+				2D97EE501EE505B8009C11F1 /* 意见反馈 */,
 				2D55A6D71EC5921D0010005F /* 招聘页面 */,
 				2D6B0BBA1EC05D6E00F59DB4 /* 照片管理器 */,
 				2DBA2B131E07B08A0085E471 /* Controller */,
@@ -465,7 +458,9 @@
 		18E7DEB91E0680D30076881C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2D97EE581EE53D8C009C11F1 /* TDHelperMacros.h */,
 				18E7DEBA1E0680D30076881C /* main.m */,
+				2D97EE571EE53BF8009C11F1 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -847,6 +842,39 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		2D97EE501EE505B8009C11F1 /* 意见反馈 */ = {
+			isa = PBXGroup;
+			children = (
+				2D97EE511EE505B8009C11F1 /* Controller */,
+				2D97EE521EE505B8009C11F1 /* Model */,
+				2D97EE531EE505B8009C11F1 /* View */,
+			);
+			path = "意见反馈";
+			sourceTree = "<group>";
+		};
+		2D97EE511EE505B8009C11F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2D97EE541EE50609009C11F1 /* TDAdviceViewController.h */,
+				2D97EE551EE50609009C11F1 /* TDAdviceViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2D97EE521EE505B8009C11F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D97EE531EE505B8009C11F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2DBA2AE41E076E7A0085E471 /* icon */ = {
 			isa = PBXGroup;
 			children = (
@@ -1130,7 +1158,7 @@
 				2D846BCE1E08DD8200EE3B3E /* UIButton+WebCache.m in Sources */,
 				2D846C3C1E090FE300EE3B3E /* MJRefreshComponent.m in Sources */,
 				2D846C411E090FE300EE3B3E /* MJRefreshAutoStateFooter.m in Sources */,
-				18950D251EE4233200DBB80A /* TDFeedBackViewController.m in Sources */,
+				2D97EE561EE50609009C11F1 /* TDAdviceViewController.m in Sources */,
 				2D57D91C1E1516E5009DCB9E /* POPVector.mm in Sources */,
 				2D846BD21E08DD8200EE3B3E /* UIImageView+HighlightedWebCache.m in Sources */,
 				2D0EEAA71ED2E63C007F3AA7 /* CompanyDetailInfoCell.m in Sources */,
@@ -1285,6 +1313,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9QGX249ZE2;
+				GCC_PREFIX_HEADER = MyTuanDaiDemo/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = MyTuanDaiDemo/Info.plist;
@@ -1304,6 +1333,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9QGX249ZE2;
+				GCC_PREFIX_HEADER = MyTuanDaiDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = MyTuanDaiDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

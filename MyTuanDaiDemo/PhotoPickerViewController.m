@@ -152,7 +152,7 @@
     UIButton *button6 = [[UIButton alloc]initWithFrame:CGRectMake(10, interval*7, 150, 50)];
     button6.backgroundColor  = [UIColor lightGrayColor];
     button6.tag = 6;
-    [button6 setTitle:@"查看大图可勾选" forState:UIControlStateNormal];
+    [button6 setTitle:@"查看大图可删除" forState:UIControlStateNormal];
     [self.view addSubview:button6];
     [button6 addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
 }

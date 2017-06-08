@@ -9,7 +9,7 @@
 #import "SecondViewController.h"
 #import "CompalyDetailsViewController.h"
 #import "UIViewController+Debugging.h"
-#import "TDFeedBackViewController.h"
+#import "TDAdviceViewController.h"
 
 @interface SecondViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -78,8 +78,7 @@
             break;
         }
         case 1:{
-            TDFeedBackViewController *feedBackViewC = [TDFeedBackViewController new];
-            feedBackViewC.title = @"公司";
+            TDAdviceViewController *feedBackViewC = [TDAdviceViewController new];
             [self openView:feedBackViewC];
             break;
         }

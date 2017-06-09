@@ -10,6 +10,7 @@
 #import "CompalyDetailsViewController.h"
 #import "UIViewController+Debugging.h"
 #import "TDAdviceViewController.h"
+#import "CustomCameraViewController.h"
 
 @interface SecondViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -59,7 +60,14 @@
             cell.textLabel.text = @"招聘";
             break;
         }
-            
+        case 1:{
+            cell.textLabel.text = @"意见反馈";
+            break;
+        }
+        case 2:{
+            cell.textLabel.text = @"自定义相机";
+            break;
+        }
             
         default:
             cell.textLabel.text = @"cell";
@@ -78,11 +86,15 @@
             break;
         }
         case 1:{
-            TDAdviceViewController *feedBackViewC = [TDAdviceViewController new];
-            [self openView:feedBackViewC];
+            TDAdviceViewController *adviceVC = [TDAdviceViewController new];
+            [self openView:adviceVC];
             break;
         }
-            
+        case 2:{
+            CustomCameraViewController *customCameraVC = [CustomCameraViewController new];
+            [self openView:customCameraVC];
+            break;
+        }
         default:
             break;
     }

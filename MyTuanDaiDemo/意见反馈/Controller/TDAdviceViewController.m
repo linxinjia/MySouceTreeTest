@@ -23,7 +23,7 @@
     self.view.backgroundColor = UIColorFromRGB(0xf2f2f0);
     self.title = @"意见反馈";
     
-    self.navigationController.navigationBar.translucent = NO;
+//    self.navigationController.navigationBar.translucent = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource  = self;    
 }
@@ -56,7 +56,7 @@
     if (section == 2) {
         return 44;
     }else{
-        return 0;
+        return 0.01;
     }
 }
 
@@ -103,7 +103,7 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = UIColorFromRGB(0xf2f2f0);
         _tableView.translatesAutoresizingMaskIntoConstraints = NO;

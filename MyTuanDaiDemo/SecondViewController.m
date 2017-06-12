@@ -11,6 +11,7 @@
 #import "UIViewController+Debugging.h"
 #import "TDAdviceViewController.h"
 #import "CustomCameraViewController.h"
+#import "CustomPhotosViewController.h"
 
 @interface SecondViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -68,6 +69,10 @@
             cell.textLabel.text = @"自定义相机";
             break;
         }
+        case 3:{
+            cell.textLabel.text = @"自定义相册";
+            break;
+        }
             
         default:
             cell.textLabel.text = @"cell";
@@ -86,13 +91,18 @@
             break;
         }
         case 1:{
-            TDAdviceViewController *adviceVC = [TDAdviceViewController new];
-            [self openView:adviceVC];
+//            TDAdviceViewController *adviceVC = [TDAdviceViewController new];
+//            [self openView:adviceVC];
             break;
         }
         case 2:{
             CustomCameraViewController *customCameraVC = [CustomCameraViewController new];
             [self openView:customCameraVC];
+            break;
+        }
+        case 3:{
+            CustomPhotosViewController *customPhotosVC = [CustomPhotosViewController new];
+            [self openView:customPhotosVC];
             break;
         }
         default:

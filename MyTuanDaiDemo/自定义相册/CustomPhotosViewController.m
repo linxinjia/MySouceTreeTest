@@ -8,8 +8,10 @@
 
 #import "CustomPhotosViewController.h"
 #import <Photos/Photos.h>
+#import "TZImagePickerController.h"
+#import "TZImageManager.h"
 
-@interface CustomPhotosViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface CustomPhotosViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,TZImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @end
@@ -27,16 +29,11 @@
 
 - (void)setUpSuperView{
     
-    UICollectionViewLayout *flowLayout = [[UICollectionViewLayout alloc]init];
-    
-//    flowLayout.minimumInteritemSpacing = 10;
-//    flowLayout.minimumLineSpacing = 10;
-//    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
     
-//    self.collectionView.collectionViewLayout = flowLayout;
-//    self.collectionView.delegate = self;
-//    self.collectionView.dataSource = self;
+    
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
     
 }
 
@@ -89,9 +86,9 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *reusedCell;
-    reusedCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reusedCell" forIndexPath:indexPath];
-    
+    UICollectionViewCell *reusedCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reusedCell" forIndexPath:indexPath];
+    reusedCell.backgroundColor = [UIColor greenColor];
+
     return reusedCell;
 }
 
@@ -133,10 +130,13 @@
 //    return reusableView;
 //}
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self toSelectImagesselectedPhotos:nil maxImagesCount:5];
+}
 
-//#pragma mark UICollectionViewDelegateFlowLayout
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
+#pragma mark UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
 //    EtpfSearchPageViewCell *searchCell;
 //    searchCell = [[EtpfSearchPageViewCell alloc] init];
 //    if (indexPath.section == 0) {
@@ -149,26 +149,62 @@
 //    NSDictionary *attribute = @{NSFontAttributeName:searchCell.label.font};
 //    CGSize size = [searchCell.label.text boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, 1000.0f) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
 //    return CGSizeMake(size.width, size.height*1.5);
-//}
-//
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-//{
-//    return  CGSizeMake(self.view.frame.size.width, 50);
-//}
-//
-//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-//{
-//    return UIEdgeInsetsMake(0, 20, 0, 20);
-//}
+    return CGSizeMake(60, 60);
+}
+
+
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(0, 20, 0, 20);
+}
+
+
+#pragma mark - action
+- (void)toSelectImagesselectedPhotos:(NSMutableArray *)selectedPhotos maxImagesCount:(NSInteger)count{
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:count delegate:self];
+    
+        //设置imagePickerVc的外观
+    imagePickerVc.naviBgColor = [UIColor whiteColor];
+    imagePickerVc.naviTitleColor = self.navigationController.navigationBar.tintColor;
+    imagePickerVc.barItemTextColor = self.navigationController.navigationBar.tintColor;
+    imagePickerVc.navigationBar.tintColor = self.navigationController.navigationBar.tintColor;
+    
+    
+    imagePickerVc.allowTakePicture = NO;
+    imagePickerVc.allowPickingGif = NO;
+    imagePickerVc.allowPickingVideo = NO;
+    imagePickerVc.allowPickingOriginalPhoto = NO;
+    imagePickerVc.didFinishPickingPhotosHandle = ^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+        NSLog(@"获取到照片");
+       
+    };
+    
+    imagePickerVc.title = @"添加图片";
+    
+    
+    [self presentViewController:imagePickerVc animated:YES completion:nil];
+    
+}
+
 
 
 #pragma mark - getters
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
-        _collectionView = [UICollectionView new];
-        _collectionView.translatesAutoresizingMaskIntoConstraints = NO;
-        [self.view addSubview:_collectionView];
+        UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.minimumInteritemSpacing = 10;
+        layout.minimumLineSpacing = 10;
+        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"reusedCell"];//cell重用设置ID
+        _collectionView.translatesAutoresizingMaskIntoConstraints = NO;
+        _collectionView.backgroundColor = [UIColor whiteColor];
+
+        [self.view addSubview:_collectionView];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_collectionView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_collectionView)]];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64.5-[_collectionView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_collectionView)]];
     }
     return _collectionView;
 }

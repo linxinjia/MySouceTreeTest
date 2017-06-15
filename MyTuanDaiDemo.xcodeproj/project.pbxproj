@@ -111,6 +111,7 @@
 		2D846C4B1E090FE300EE3B3E /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D846C371E090FE300EE3B3E /* UIScrollView+MJRefresh.m */; };
 		2D846C4C1E090FE300EE3B3E /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D846C391E090FE300EE3B3E /* UIView+MJExtension.m */; };
 		2D97EE561EE50609009C11F1 /* TDAdviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97EE551EE50609009C11F1 /* TDAdviceViewController.m */; };
+		2D9C3DD51EF219290029589F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D9C3DD41EF219290029589F /* InfoPlist.strings */; };
 		2DBA2AF21E076E7A0085E471 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBA2AE51E076E7A0085E471 /* icon.png */; };
 		2DBA2AF31E076E7A0085E471 /* icon_data.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBA2AE61E076E7A0085E471 /* icon_data.png */; };
 		2DBA2AF81E076E7A0085E471 /* Icon_safety.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBA2AEB1E076E7A0085E471 /* Icon_safety.png */; };
@@ -361,6 +362,7 @@
 		2D97EE551EE50609009C11F1 /* TDAdviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAdviceViewController.m; sourceTree = "<group>"; };
 		2D97EE571EE53BF8009C11F1 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2D97EE581EE53D8C009C11F1 /* TDHelperMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHelperMacros.h; sourceTree = "<group>"; };
+		2D9C3DD41EF219290029589F /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		2DBA2AE51E076E7A0085E471 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2DBA2AE61E076E7A0085E471 /* icon_data.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_data.png; sourceTree = "<group>"; };
 		2DBA2AEB1E076E7A0085E471 /* Icon_safety.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_safety.png; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 		2DBA2B0F1E078FFA0085E471 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		2DBA2B141E07EA290085E471 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		2DBA2B151E07EA290085E471 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		2DD8F3CE1EF13C43004AF0B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		2DE0F3511EEAA5160039CAA4 /* CustomPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPhotosViewController.h; sourceTree = "<group>"; };
 		2DE0F3521EEAA5160039CAA4 /* CustomPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPhotosViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -457,6 +460,7 @@
 				18E7DEC51E0680D30076881C /* Assets.xcassets */,
 				18E7DEC71E0680D30076881C /* LaunchScreen.storyboard */,
 				18E7DECA1E0680D30076881C /* Info.plist */,
+				2D9C3DD41EF219290029589F /* InfoPlist.strings */,
 				2DBA2AE41E076E7A0085E471 /* icon */,
 				18E7DEB91E0680D30076881C /* Supporting Files */,
 			);
@@ -1056,6 +1060,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E7DEC91E0680D30076881C /* LaunchScreen.storyboard in Resources */,
+				2D9C3DD51EF219290029589F /* InfoPlist.strings in Resources */,
 				2DBA2AF81E076E7A0085E471 /* Icon_safety.png in Resources */,
 				2D846BDB1E08E11300EE3B3E /* image_security.png in Resources */,
 				2DBA2AFE1E076E7A0085E471 /* icon_welfare2.png in Resources */,
@@ -1232,6 +1237,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				18E7DEC81E0680D30076881C /* Base */,
+				2DD8F3CE1EF13C43004AF0B3 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1243,6 +1249,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1293,6 +1300,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

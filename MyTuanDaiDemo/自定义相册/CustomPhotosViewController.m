@@ -10,6 +10,8 @@
 #import <Photos/Photos.h>
 #import "TZImagePickerController.h"
 #import "TZImageManager.h"
+#import <WebKit/WebKit.h>
+
 
 @interface CustomPhotosViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,TZImagePickerControllerDelegate>
 
@@ -18,6 +20,10 @@
 
 @implementation CustomPhotosViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -25,13 +31,10 @@
 
     [self getPhotos];
     [self setUpSuperView];
+    
 }
 
 - (void)setUpSuperView{
-    
-    
-    
-    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
@@ -73,8 +76,6 @@
 }
 
 
-
-
 #pragma mark - UICollectionViewDelegate,UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -92,51 +93,12 @@
     return reusedCell;
 }
 
-
-
-//// 给头(尾)添加内容
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-//    
-//    UICollectionReusableView *reusableView = nil;
-//    if ([kind isEqualToString:UICollectionElementKindSectionHeader])
-//    {
-//        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
-//        CGSize size = reusableView.bounds.size;
-//        for (UIView * view in reusableView.subviews) {
-//            [view removeFromSuperview];
-//        }
-//        if (indexPath.section == 0) {
-//            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, size.height-30, size.width, 20)];
-//            label.textAlignment = NSTextAlignmentLeft;
-//            label.text = @"热搜";
-//            label.font = [UIFont systemFontOfSize:15];
-//            [reusableView addSubview:label];
-//        }else if(indexPath.section == 1) {
-//            UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, size.height-30, 20, 20)];
-//            imageView.image = [UIImage imageNamed:@"icon_clock.png"];
-//            imageView.backgroundColor = [UIColor clearColor];
-//            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(40, size.height-30, size.width, 20)];
-//            label.textAlignment = NSTextAlignmentLeft;
-//            label.text = @"搜索历史";
-//            label.font = [UIFont systemFontOfSize:15];
-//            [reusableView addSubview:imageView];
-//            [reusableView addSubview:label];
-//        }
-//    }else {
-//    }
-//    if (indexPath.section == 0) {
-//        reusableView.frame = CGRectZero;
-//    }
-//    return reusableView;
-//}
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self toSelectImagesselectedPhotos:nil maxImagesCount:5];
 }
 
 #pragma mark UICollectionViewDelegateFlowLayout
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
 //    EtpfSearchPageViewCell *searchCell;
 //    searchCell = [[EtpfSearchPageViewCell alloc] init];
 //    if (indexPath.section == 0) {
@@ -152,24 +114,18 @@
     return CGSizeMake(60, 60);
 }
 
-
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(0, 20, 0, 20);
 }
-
 
 #pragma mark - action
 - (void)toSelectImagesselectedPhotos:(NSMutableArray *)selectedPhotos maxImagesCount:(NSInteger)count{
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:count delegate:self];
-    
-        //设置imagePickerVc的外观
+    //设置imagePickerVc的外观
     imagePickerVc.naviBgColor = [UIColor whiteColor];
     imagePickerVc.naviTitleColor = self.navigationController.navigationBar.tintColor;
     imagePickerVc.barItemTextColor = self.navigationController.navigationBar.tintColor;
     imagePickerVc.navigationBar.tintColor = self.navigationController.navigationBar.tintColor;
-    
     
     imagePickerVc.allowTakePicture = NO;
     imagePickerVc.allowPickingGif = NO;
@@ -177,17 +133,15 @@
     imagePickerVc.allowPickingOriginalPhoto = NO;
     imagePickerVc.didFinishPickingPhotosHandle = ^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
         NSLog(@"获取到照片");
-       
     };
-    
     imagePickerVc.title = @"添加图片";
-    
     
     [self presentViewController:imagePickerVc animated:YES completion:nil];
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    });
 }
-
-
 
 #pragma mark - getters
 - (UICollectionView *)collectionView{
@@ -204,7 +158,7 @@
 
         [self.view addSubview:_collectionView];
         [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_collectionView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_collectionView)]];
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64.5-[_collectionView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_collectionView)]];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-65-[_collectionView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_collectionView)]];
     }
     return _collectionView;
 }
@@ -212,16 +166,62 @@
 
 
 
-////获取所有资源
-//- (void)getAllPhotos{
-//    // 获取所有资源的集合，并按资源的创建时间排序
-//    PHFetchOptions *options = [[PHFetchOptions alloc] init];
-//    options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
-//    PHFetchResult *assetsFetchResults = [PHAsset fetchAssetsWithOptions:options];
-//    // 这时 assetsFetchResults 中包含的，应该就是各个资源（PHAsset）
-//    for (NSInteger i = 0; i < assetsFetchResults.count; i++) {
-//        // 获取一个资源（PHAsset）
-//        PHAsset *asset = assetsFetchResults[i];
-//    }
-//}
+
+
+
+
+
+
+
+
+#if 0
+//获取所有资源
+- (void)getAllPhotos{
+    // 获取所有资源的集合，并按资源的创建时间排序
+    PHFetchOptions *options = [[PHFetchOptions alloc] init];
+    options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
+    PHFetchResult *assetsFetchResults = [PHAsset fetchAssetsWithOptions:options];
+    // 这时 assetsFetchResults 中包含的，应该就是各个资源（PHAsset）
+    for (NSInteger i = 0; i < assetsFetchResults.count; i++) {
+        // 获取一个资源（PHAsset）
+        PHAsset *asset = assetsFetchResults[i];
+    }
+}
+// 给头(尾)添加内容
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionReusableView *reusableView = nil;
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader])
+    {
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
+        CGSize size = reusableView.bounds.size;
+        for (UIView * view in reusableView.subviews) {
+            [view removeFromSuperview];
+        }
+        if (indexPath.section == 0) {
+            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, size.height-30, size.width, 20)];
+            label.textAlignment = NSTextAlignmentLeft;
+            label.text = @"热搜";
+            label.font = [UIFont systemFontOfSize:15];
+            [reusableView addSubview:label];
+        }else if(indexPath.section == 1) {
+            UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, size.height-30, 20, 20)];
+            imageView.image = [UIImage imageNamed:@"icon_clock.png"];
+            imageView.backgroundColor = [UIColor clearColor];
+            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(40, size.height-30, size.width, 20)];
+            label.textAlignment = NSTextAlignmentLeft;
+            label.text = @"搜索历史";
+            label.font = [UIFont systemFontOfSize:15];
+            [reusableView addSubview:imageView];
+            [reusableView addSubview:label];
+        }
+    }else {
+    }
+    if (indexPath.section == 0) {
+        reusableView.frame = CGRectZero;
+    }
+    return reusableView;
+}
+#endif
+
 @end

@@ -13,5 +13,116 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTuanDaiDemo/&#x7167;&#x7247;&#x7ba1;&#x7406;&#x5668;/TZImagePickerController/TZVideoPlayerController.m"
+            timestampString = "519113565.366362"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTuanDaiDemo/&#x7167;&#x7247;&#x7ba1;&#x7406;&#x5668;/TZImagePickerController/TZGifPhotoPreviewController.m"
+            timestampString = "519113582.276439"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTuanDaiDemo/&#x7167;&#x7247;&#x7ba1;&#x7406;&#x5668;/TZImagePickerController/TZImagePickerController.m"
+            timestampString = "519117161.434999"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTuanDaiDemo/&#x81ea;&#x5b9a;&#x4e49;&#x76f8;&#x518c;/CustomPhotosViewController.m"
+            timestampString = "519124365.470324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "-toSelectImagesselectedPhotos:maxImagesCount:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__74-[CustomPhotosViewController toSelectImagesselectedPhotos:maxImagesCount:]_block_invoke_2"
+                  moduleName = "MyTuanDaiDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linxinjia/Desktop/MySouceTreeTest/MyTuanDaiDemo/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9B%B8%E5%86%8C/CustomPhotosViewController.m"
+                  timestampString = "519124365.81638"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_"
+                  moduleName = "MyTuanDaiDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linxinjia/Desktop/MySouceTreeTest/MyTuanDaiDemo/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9B%B8%E5%86%8C/CustomPhotosViewController.m"
+                  timestampString = "519124365.817698"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_"
+                  moduleName = "MyTuanDaiDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linxinjia/Desktop/MySouceTreeTest/MyTuanDaiDemo/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9B%B8%E5%86%8C/CustomPhotosViewController.m"
+                  timestampString = "519124365.818954"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
